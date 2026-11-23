@@ -1,13 +1,12 @@
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
-  lucideBell,
   lucideChevronDown,
   lucideListChecks,
   lucideLogOut,
   lucideMenu,
   lucideMessageCircle,
-  lucideUser,
   lucideUserPlus,
   lucideUsers,
   lucideX,
@@ -16,6 +15,7 @@ import {
 export interface ShellItem {
   rotulo: string;
   icone: string;
+  rota: string;
 }
 
 export interface ShellUsuario {
@@ -29,26 +29,26 @@ export interface ShellUsuario {
  */
 @Component({
   selector: 'psi-shell',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIcon],
+  imports: [NgIcon, RouterLink, RouterLinkActive, RouterOutlet],
   providers: [
     provideIcons({
-      lucideBell,
       lucideChevronDown,
       lucideListChecks,
       lucideLogOut,
       lucideMenu,
       lucideMessageCircle,
-      lucideUser,
       lucideUserPlus,
       lucideUsers,
       lucideX,
     }),
   ],
   template: `
-    <header
-      class="bg-background fixed inset-x-0 top-0 z-30 flex h-14 items-center gap-3 border-b px-4"
+    <a
+      href="#conteudo"
+      class="bg-background focus:ring-ring sr-only z-50 rounded-md px-3 py-2 focus:not-sr-only focus:fixed focus:start-2 focus:top-2 focus:ring-2"
+      >Ir para o conteúdo</a
     >
+    <header class="bg-background fixed inset-x-0 top-0 z-30 flex h-14 items-center gap-3 border-b px-4">
       <button
         type="button"
         class="hover:bg-muted -ms-2 grid size-10 place-items-center rounded-md lg:hidden"
@@ -60,7 +60,7 @@ export interface ShellUsuario {
         <ng-icon [name]="gaveta() ? 'lucideX' : 'lucideMenu'" size="20" aria-hidden="true" />
       </button>
 
-      <a href="#" class="font-display text-lg font-semibold" (click)="$event.preventDefault()">PsiApoio</a>
+      <span class="font-display text-lg font-semibold">PsiApoio</span>
 
       <div class="relative ms-auto">
         <button
@@ -83,18 +83,17 @@ export interface ShellUsuario {
         </button>
 
         @if (perfilAberto()) {
-          <div
-            role="menu"
-            class="bg-popover absolute end-0 top-full mt-1 w-56 rounded-md border p-1"
-          >
+          <div role="menu" class="bg-popover absolute end-0 top-full mt-1 w-56 rounded-md border p-1">
             <p class="border-b px-3 py-2 sm:hidden">
               <span class="block text-sm font-semibold">{{ usuario().nome }}</span>
               <span class="text-muted-foreground block text-xs">{{ usuario().papel }}</span>
             </p>
-            <button role="menuitem" type="button" class="hover:bg-muted flex w-full items-center gap-2 rounded-sm px-3 py-2 text-sm">
-              <ng-icon name="lucideUser" aria-hidden="true" /> Meu perfil
-            </button>
-            <button role="menuitem" type="button" class="hover:bg-muted flex w-full items-center gap-2 rounded-sm px-3 py-2 text-sm">
+            <button
+              role="menuitem"
+              type="button"
+              class="hover:bg-muted flex w-full items-center gap-2 rounded-sm px-3 py-2 text-sm"
+              (click)="sair.emit()"
+            >
               <ng-icon name="lucideLogOut" aria-hidden="true" /> Sair
             </button>
           </div>
@@ -118,43 +117,42 @@ export interface ShellUsuario {
       [class.-translate-x-full]="!gaveta()"
     >
       <ul class="space-y-1">
-        @for (item of itens(); track item.rotulo; let i = $index) {
+        @for (item of itens(); track item.rota) {
           <li>
-            <button
-              type="button"
-              class="hover:bg-muted flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-start font-medium"
-              [class.bg-accent]="ativo() === i"
-              [class.text-accent-foreground]="ativo() === i"
-              [attr.aria-current]="ativo() === i ? 'page' : null"
-              (click)="ativo.set(i); gaveta.set(false)"
+            <a
+              [routerLink]="item.rota"
+              routerLinkActive="bg-accent text-accent-foreground"
+              ariaCurrentWhenActive="page"
+              class="hover:bg-muted flex w-full items-center gap-3 rounded-md px-3 py-2.5 font-medium"
+              (click)="gaveta.set(false)"
             >
               <ng-icon [name]="item.icone" size="18" aria-hidden="true" />
               {{ item.rotulo }}
-            </button>
+            </a>
           </li>
         }
       </ul>
     </nav>
 
-    <main class="pt-14 lg:ps-56">
-      <ng-content />
+    <main id="conteudo" class="pt-14 lg:ps-56" tabindex="-1">
+      <router-outlet />
     </main>
   `,
 })
 export class Shell {
   readonly usuario = input.required<ShellUsuario>();
   readonly itens = input.required<ShellItem[]>();
+  readonly sair = output<void>();
 
-  protected readonly ativo = signal(0);
   protected readonly gaveta = signal(false);
   protected readonly perfilAberto = signal(false);
 
-  protected iniciais(): string {
-    return this.usuario()
+  protected readonly iniciais = computed(() =>
+    this.usuario()
       .nome.split(' ')
       .filter((p) => /^[A-ZÀ-Ú]/.test(p))
       .slice(0, 2)
       .map((p) => p[0])
-      .join('');
-  }
+      .join(''),
+  );
 }
