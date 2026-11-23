@@ -1,0 +1,161 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css';
+
+@import '@spartan-ng/brain/hlm-tailwind-preset.css';
+
+@import '@fontsource-variable/figtree';
+@import '@fontsource-variable/source-sans-3';
+
+/*
+ * Fonte única dos tokens do PsiApoio (docs/adr/0005-direcao-de-design.md).
+ * Tema claro, neutros quentes, marca verde-azulada, Figtree (títulos) + Source Sans 3 (corpo).
+ * Vermelho e âmbar pertencem só a risco e atenção: a marca nunca usa essas famílias.
+ * O :root traduz os mesmos valores para as variáveis que o helm do spartan lê.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Tipografia */
+  --psi-font-display: 'Figtree Variable', 'Source Sans 3 Variable', system-ui, sans-serif;
+  --psi-font-body: 'Source Sans 3 Variable', system-ui, sans-serif;
+
+  /* Forma */
+  /* O preset do spartan calcula rounded-md como 0,8 × --radius: 0,625rem dá 8 px nos controles. */
+  --radius: 0.625rem;
+  --radius-surface: 0.75rem;
+
+  /* Neutros quentes (matiz 90, croma baixo) */
+  --background: oklch(0.985 0.004 90);
+  --foreground: oklch(0.24 0.012 90);
+  --card: oklch(0.997 0.002 90);
+  --card-foreground: oklch(0.24 0.012 90);
+  --popover: oklch(0.997 0.002 90);
+  --popover-foreground: oklch(0.24 0.012 90);
+  --muted: oklch(0.955 0.006 90);
+  --muted-foreground: oklch(0.46 0.012 90);
+  --border: oklch(0.905 0.008 90);
+  --input: oklch(0.62 0.012 90);
+
+  /* Marca: verde-azulado (matiz 195) */
+  --primary: oklch(0.45 0.075 195);
+  --primary-foreground: oklch(0.985 0.006 195);
+  --secondary: oklch(0.94 0.02 195);
+  --secondary-foreground: oklch(0.33 0.06 195);
+  --accent: oklch(0.94 0.02 195);
+  --accent-foreground: oklch(0.33 0.06 195);
+  --ring: oklch(0.55 0.09 195);
+
+  /* Erro de formulário e ação destrutiva: mesmo vermelho do status "risco" */
+  --destructive: oklch(0.5 0.17 27);
+
+  /* Status (independentes da marca; sempre ícone + rótulo + cor) */
+  --status-nenhum-bg: oklch(0.95 0.008 90);
+  --status-nenhum-fg: oklch(0.4 0.012 90);
+  --status-atencao-bg: oklch(0.95 0.06 85);
+  --status-atencao-fg: oklch(0.4 0.09 65);
+  --status-risco-bg: oklch(0.94 0.04 25);
+  --status-risco-fg: oklch(0.42 0.15 27);
+  --status-risco-linha: oklch(0.97 0.018 25);
+  --status-pendente-fg: oklch(0.42 0.04 250);
+  --status-aprovado-fg: var(--secondary-foreground);
+
+  --chart-1: var(--primary);
+  --chart-2: oklch(0.6 0.05 195);
+  --chart-3: oklch(0.72 0.03 195);
+  --chart-4: oklch(0.55 0.02 90);
+  --chart-5: oklch(0.8 0.01 90);
+
+  --sidebar: oklch(0.97 0.005 90);
+  --sidebar-foreground: oklch(0.24 0.012 90);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@theme inline {
+  --font-sans: var(--psi-font-body);
+  --font-display: var(--psi-font-display);
+
+  --color-status-nenhum-bg: var(--status-nenhum-bg);
+  --color-status-nenhum-fg: var(--status-nenhum-fg);
+  --color-status-atencao-bg: var(--status-atencao-bg);
+  --color-status-atencao-fg: var(--status-atencao-fg);
+  --color-status-risco-bg: var(--status-risco-bg);
+  --color-status-risco-fg: var(--status-risco-fg);
+  --color-status-risco-linha: var(--status-risco-linha);
+  --color-status-pendente-fg: var(--status-pendente-fg);
+  --color-status-aprovado-fg: var(--status-aprovado-fg);
+
+  --radius-surface: var(--radius-surface);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* Celular lê em 16 px; em tela larga a base cai para 13 px (todo o sistema é em rem). */
+  html {
+    font-size: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 81.25%;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-balance;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  /* Superfícies do navegador que também levam o design */
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 22%, transparent);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    accent-color: var(--primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

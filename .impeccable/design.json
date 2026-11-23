@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T00:00:00Z",
+  "title": "Design System: PsiApoio",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Verde-azulado Profundo", "canonical": "oklch(0.45 0.075 195)", "tonalRamp": ["oklch(0.2 0.04 195)", "oklch(0.3 0.06 195)", "oklch(0.45 0.075 195)", "oklch(0.55 0.09 195)", "oklch(0.68 0.07 195)", "oklch(0.8 0.045 195)", "oklch(0.9 0.025 195)", "oklch(0.96 0.012 195)"] },
+      "brand-soft": { "role": "primary", "displayName": "Verde-azulado Suave", "canonical": "oklch(0.94 0.02 195)", "tonalRamp": ["oklch(0.2 0.04 195)", "oklch(0.33 0.06 195)", "oklch(0.5 0.07 195)", "oklch(0.65 0.06 195)", "oklch(0.8 0.04 195)", "oklch(0.9 0.027 195)", "oklch(0.94 0.02 195)", "oklch(0.97 0.01 195)"] },
+      "ring": { "role": "primary", "displayName": "Verde-azulado de Foco", "canonical": "oklch(0.55 0.09 195)", "tonalRamp": ["oklch(0.25 0.05 195)", "oklch(0.35 0.07 195)", "oklch(0.45 0.08 195)", "oklch(0.55 0.09 195)", "oklch(0.65 0.08 195)", "oklch(0.77 0.06 195)", "oklch(0.88 0.035 195)", "oklch(0.95 0.015 195)"] },
+      "background": { "role": "neutral", "displayName": "Papel Quente", "canonical": "oklch(0.985 0.004 90)", "tonalRamp": ["oklch(0.2 0.01 90)", "oklch(0.3 0.012 90)", "oklch(0.46 0.012 90)", "oklch(0.62 0.012 90)", "oklch(0.78 0.01 90)", "oklch(0.905 0.008 90)", "oklch(0.955 0.006 90)", "oklch(0.985 0.004 90)"] },
+      "surface": { "role": "neutral", "displayName": "Superfície Clara", "canonical": "oklch(0.997 0.002 90)", "tonalRamp": ["oklch(0.2 0.01 90)", "oklch(0.3 0.012 90)", "oklch(0.46 0.012 90)", "oklch(0.62 0.012 90)", "oklch(0.8 0.01 90)", "oklch(0.92 0.007 90)", "oklch(0.97 0.004 90)", "oklch(0.997 0.002 90)"] },
+      "foreground": { "role": "neutral", "displayName": "Tinta Quente", "canonical": "oklch(0.24 0.012 90)", "tonalRamp": ["oklch(0.15 0.01 90)", "oklch(0.24 0.012 90)", "oklch(0.35 0.012 90)", "oklch(0.46 0.012 90)", "oklch(0.58 0.012 90)", "oklch(0.72 0.01 90)", "oklch(0.86 0.008 90)", "oklch(0.95 0.005 90)"] },
+      "muted": { "role": "neutral", "displayName": "Areia Suave", "canonical": "oklch(0.955 0.006 90)", "tonalRamp": ["oklch(0.2 0.01 90)", "oklch(0.35 0.012 90)", "oklch(0.5 0.012 90)", "oklch(0.65 0.012 90)", "oklch(0.8 0.01 90)", "oklch(0.9 0.008 90)", "oklch(0.955 0.006 90)", "oklch(0.98 0.004 90)"] },
+      "muted-foreground": { "role": "neutral", "displayName": "Tinta de Apoio", "canonical": "oklch(0.46 0.012 90)", "tonalRamp": ["oklch(0.2 0.01 90)", "oklch(0.3 0.012 90)", "oklch(0.38 0.012 90)", "oklch(0.46 0.012 90)", "oklch(0.56 0.012 90)", "oklch(0.68 0.01 90)", "oklch(0.82 0.008 90)", "oklch(0.93 0.005 90)"] },
+      "border": { "role": "neutral", "displayName": "Fio Quente", "canonical": "oklch(0.905 0.008 90)", "tonalRamp": ["oklch(0.3 0.012 90)", "oklch(0.45 0.012 90)", "oklch(0.62 0.012 90)", "oklch(0.75 0.01 90)", "oklch(0.84 0.009 90)", "oklch(0.905 0.008 90)", "oklch(0.945 0.006 90)", "oklch(0.975 0.004 90)"] },
+      "input-border": { "role": "neutral", "displayName": "Contorno de Campo", "canonical": "oklch(0.62 0.012 90)", "tonalRamp": ["oklch(0.25 0.012 90)", "oklch(0.35 0.012 90)", "oklch(0.46 0.012 90)", "oklch(0.62 0.012 90)", "oklch(0.72 0.011 90)", "oklch(0.82 0.009 90)", "oklch(0.91 0.007 90)", "oklch(0.96 0.005 90)"] },
+      "destructive": { "role": "status", "displayName": "Vermelho de Erro", "canonical": "oklch(0.5 0.17 27)", "tonalRamp": ["oklch(0.25 0.09 27)", "oklch(0.36 0.13 27)", "oklch(0.5 0.17 27)", "oklch(0.6 0.16 27)", "oklch(0.72 0.11 27)", "oklch(0.84 0.065 27)", "oklch(0.92 0.035 27)", "oklch(0.97 0.015 27)"] },
+      "status-risco-bg": { "role": "status", "displayName": "Fundo de Risco", "canonical": "oklch(0.94 0.04 25)", "tonalRamp": ["oklch(0.25 0.09 27)", "oklch(0.42 0.15 27)", "oklch(0.58 0.15 27)", "oklch(0.72 0.1 26)", "oklch(0.85 0.065 25)", "oklch(0.94 0.04 25)", "oklch(0.97 0.018 25)", "oklch(0.985 0.008 25)"] },
+      "status-risco-fg": { "role": "status", "displayName": "Texto de Risco", "canonical": "oklch(0.42 0.15 27)", "tonalRamp": ["oklch(0.22 0.08 27)", "oklch(0.32 0.12 27)", "oklch(0.42 0.15 27)", "oklch(0.52 0.16 27)", "oklch(0.64 0.13 27)", "oklch(0.78 0.08 26)", "oklch(0.9 0.04 25)", "oklch(0.96 0.018 25)"] },
+      "status-risco-linha": { "role": "status", "displayName": "Linha de Risco", "canonical": "oklch(0.97 0.018 25)", "tonalRamp": ["oklch(0.3 0.1 27)", "oklch(0.45 0.14 27)", "oklch(0.6 0.13 27)", "oklch(0.75 0.09 26)", "oklch(0.87 0.055 25)", "oklch(0.94 0.035 25)", "oklch(0.97 0.018 25)", "oklch(0.99 0.006 25)"] },
+      "status-atencao-bg": { "role": "status", "displayName": "Fundo de Atenção", "canonical": "oklch(0.95 0.06 85)", "tonalRamp": ["oklch(0.3 0.06 70)", "oklch(0.4 0.09 65)", "oklch(0.55 0.11 70)", "oklch(0.7 0.11 80)", "oklch(0.82 0.1 85)", "oklch(0.9 0.08 85)", "oklch(0.95 0.06 85)", "oklch(0.98 0.025 85)"] },
+      "status-atencao-fg": { "role": "status", "displayName": "Texto de Atenção", "canonical": "oklch(0.4 0.09 65)", "tonalRamp": ["oklch(0.22 0.05 65)", "oklch(0.3 0.07 65)", "oklch(0.4 0.09 65)", "oklch(0.5 0.1 68)", "oklch(0.62 0.11 72)", "oklch(0.76 0.1 80)", "oklch(0.89 0.07 85)", "oklch(0.96 0.035 85)"] },
+      "status-nenhum-bg": { "role": "status", "displayName": "Fundo Sem Alerta", "canonical": "oklch(0.95 0.008 90)", "tonalRamp": ["oklch(0.25 0.012 90)", "oklch(0.4 0.012 90)", "oklch(0.55 0.012 90)", "oklch(0.7 0.01 90)", "oklch(0.84 0.009 90)", "oklch(0.92 0.008 90)", "oklch(0.95 0.008 90)", "oklch(0.98 0.004 90)"] },
+      "status-nenhum-fg": { "role": "status", "displayName": "Texto Sem Alerta", "canonical": "oklch(0.4 0.012 90)", "tonalRamp": ["oklch(0.2 0.01 90)", "oklch(0.3 0.012 90)", "oklch(0.4 0.012 90)", "oklch(0.5 0.012 90)", "oklch(0.62 0.012 90)", "oklch(0.76 0.01 90)", "oklch(0.88 0.008 90)", "oklch(0.95 0.005 90)"] },
+      "status-pendente-fg": { "role": "status", "displayName": "Azul-acinzentado de Pendente", "canonical": "oklch(0.42 0.04 250)", "tonalRamp": ["oklch(0.2 0.03 250)", "oklch(0.3 0.04 250)", "oklch(0.42 0.04 250)", "oklch(0.52 0.045 250)", "oklch(0.64 0.04 250)", "oklch(0.78 0.03 250)", "oklch(0.9 0.015 250)", "oklch(0.96 0.008 250)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Título de página (h1), um por tela. Figtree 600, 3rem em md+ e 2.25rem abaixo." },
+      "headline": { "displayName": "Headline", "purpose": "Título de seção (h2). Figtree 600, 1.5rem." },
+      "title": { "displayName": "Title", "purpose": "Subtítulos e nomes de bloco (h3). Figtree 600, 1.25rem a 1.125rem." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido e transcrições. Source Sans 3, 1rem, entrelinha 1.6, limite max-w-prose." },
+      "label": { "displayName": "Label", "purpose": "Rótulos de campo, selos, cabeçalho de tabela, botões pequenos. 0.875rem semibold, caixa de frase." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "transicao-de-cor", "value": "transition-colors / transition-all, duração padrão do Tailwind", "purpose": "Hover e foco de botões, campos e linhas de tabela." },
+      { "name": "pressionar", "value": "translateY(1px)", "purpose": "Feedback de clique em botões." },
+      { "name": "reduced-motion", "value": "animation-duration e transition-duration: 0.01ms", "purpose": "Respeita prefers-reduced-motion em todo o app." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal da tela, uma por tela.",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"/><path d=\"m21.854 2.147-10.94 10.939\"/></svg>Enviar convite</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 16px; border: 1px solid transparent; border-radius: 8px; background: var(--primary); color: var(--primary-foreground); font-family: var(--psi-font-body); font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.15s; } .ds-btn-primary:hover { background: color-mix(in oklch, var(--primary) 80%, transparent); } .ds-btn-primary:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Botão outline",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Ação secundária ou de menor peso, como Cancelar ou Abrir na linha da lista.",
+      "html": "<button class=\"ds-btn-outline\">Cancelar</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 16px; border: 1px solid var(--input); border-radius: 8px; background: var(--card); color: var(--foreground); font-family: var(--psi-font-body); font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.15s; } .ds-btn-outline:hover { background: var(--muted); } .ds-btn-outline:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão destrutivo",
+      "kind": "button",
+      "refersTo": "button-destructive",
+      "description": "Ação destrutiva: fundo vermelho tênue, texto vermelho.",
+      "html": "<button class=\"ds-btn-destructive\">Encerrar acompanhamento</button>",
+      "css": ".ds-btn-destructive { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 16px; border: 1px solid transparent; border-radius: 8px; background: color-mix(in oklch, var(--destructive) 10%, transparent); color: var(--destructive); font-family: var(--psi-font-body); font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.15s; } .ds-btn-destructive:hover { background: color-mix(in oklch, var(--destructive) 20%, transparent); } .ds-btn-destructive:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo com rótulo sempre visível e ajuda abaixo.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-nome\">Nome do paciente</label><input class=\"ds-input\" id=\"ds-nome\" type=\"text\" value=\"Beatriz Lemos\" /><p class=\"ds-help\">Como aparece na lista.</p></div>",
+      "css": ".ds-field { display: grid; gap: 8px; max-width: 28rem; } .ds-label { font-family: var(--psi-font-body); font-size: 0.875rem; font-weight: 600; color: var(--foreground); } .ds-input { width: 100%; box-sizing: border-box; height: 44px; padding: 4px 12px; border: 1px solid var(--input); border-radius: 8px; background: var(--card); color: var(--foreground); font-family: var(--psi-font-body); font-size: 1rem; outline: none; transition: border-color 0.15s, box-shadow 0.15s; } .ds-input::placeholder { color: var(--muted-foreground); } .ds-input:focus-visible { border-color: var(--ring); outline: 2px solid var(--ring); outline-offset: 2px; } .ds-help { margin: 0; font-size: 0.875rem; color: var(--muted-foreground); }"
+    },
+    {
+      "name": "Selo de risco",
+      "kind": "chip",
+      "refersTo": "badge-risco",
+      "description": "Status de risco: ícone, rótulo e cor, nunca só cor.",
+      "html": "<span class=\"ds-badge-risco\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 16h.01\"/><path d=\"M12 8v4\"/><path d=\"M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z\"/></svg>Risco</span>",
+      "css": ".ds-badge-risco { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 2px 8px; border-radius: 8px; background: var(--status-risco-bg); color: var(--status-risco-fg); font-family: var(--psi-font-body); font-size: 0.875rem; font-weight: 600; white-space: nowrap; }"
+    },
+    {
+      "name": "Selo de atenção",
+      "kind": "chip",
+      "refersTo": "badge-atencao",
+      "description": "Status de atenção em âmbar, com ícone de triângulo.",
+      "html": "<span class=\"ds-badge-atencao\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>Atenção</span>",
+      "css": ".ds-badge-atencao { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 2px 8px; border-radius: 8px; background: var(--status-atencao-bg); color: var(--status-atencao-fg); font-family: var(--psi-font-body); font-size: 0.875rem; font-weight: 600; white-space: nowrap; }"
+    },
+    {
+      "name": "Linha de paciente em risco",
+      "kind": "custom",
+      "refersTo": "table-row-risco",
+      "description": "Linha da lista do painel: fundo próprio, nome em semibold e selo de risco.",
+      "html": "<table class=\"ds-table\"><tbody><tr class=\"ds-row-risco\"><th scope=\"row\">Paciente fictício</th><td><span class=\"ds-badge-risco\">Risco</span></td><td>09:12</td></tr><tr class=\"ds-row\"><th scope=\"row\">Outro paciente</th><td><span class=\"ds-badge-nenhum\">Sem alerta</span></td><td>08:40</td></tr></tbody></table>",
+      "css": ".ds-table { width: 100%; border-collapse: collapse; font-family: var(--psi-font-body); font-size: 0.9375rem; font-variant-numeric: tabular-nums; color: var(--foreground); } .ds-table th, .ds-table td { padding: 12px 16px; text-align: start; vertical-align: middle; border-bottom: 1px solid var(--border); white-space: nowrap; } .ds-table th { font-weight: 500; } .ds-row-risco { background: var(--status-risco-linha); } .ds-row-risco th { font-weight: 600; } .ds-row:hover { background: color-mix(in oklch, var(--muted) 50%, transparent); } .ds-badge-risco, .ds-badge-nenhum { display: inline-flex; align-items: center; height: 24px; padding: 2px 8px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; } .ds-badge-risco { background: var(--status-risco-bg); color: var(--status-risco-fg); } .ds-badge-nenhum { background: var(--status-nenhum-bg); color: var(--status-nenhum-fg); }"
+    },
+    {
+      "name": "Bolhas de conversa",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "Conversa do paciente: recebidas em areia suave, enviadas em verde-azulado, até 85% da largura.",
+      "html": "<div class=\"ds-chat\"><p class=\"ds-bubble-in\">Bom dia, Camila. Como foi o exercício de respiração?</p><p class=\"ds-bubble-out\">Fiz por cinco minutos. Consegui dormir mais cedo.</p></div>",
+      "css": ".ds-chat { display: grid; gap: 16px; max-width: 28rem; font-family: var(--psi-font-body); } .ds-chat p { margin: 0; max-width: 85%; padding: 12px 16px; line-height: 1.6; } .ds-bubble-in { background: var(--muted); color: var(--foreground); border-radius: 12px 12px 12px 4px; } .ds-bubble-out { justify-self: end; background: var(--primary); color: var(--primary-foreground); border-radius: 12px 12px 4px 12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Consultório Tranquilo",
+    "overview": "O sistema se comporta como um consultório bem arrumado: luz clara, superfícies quentes, poucos objetos e nada que grite. O psicólogo precisa varrer uma lista e achar quem pede atenção; o paciente precisa conversar sem sentir que está num painel de controle. A mesma paleta serve aos dois, e a diferença está na densidade: o painel do psicólogo é um dashboard sóbrio (perfil Operate), a conversa do paciente é um componente de app com mais ar, frases curtas e nenhuma pressa.\n\nA cor de marca (verde-azulado) aparece só em ação e foco. Vermelho e âmbar pertencem exclusivamente a risco e atenção, de modo que, quando aparecem, significam algo. O tema é claro, os neutros são quentes e a profundidade vem de borda e de tom, nunca de sombra.",
+    "keyCharacteristics": [
+      "Calmo e espaçoso: seções com 48px de respiro vertical, corpo de 16px com entrelinha 1,6.",
+      "Marca verde-azulada contida em ação e foco; vermelho e âmbar reservados a risco e atenção.",
+      "Sem sombras; separação por borda de 1px e fundos tonais.",
+      "Status nunca só por cor: ícone (lucide) + rótulo + cor.",
+      "Alvo de toque de 44px em botões e campos.",
+      "Títulos em Figtree, corpo em Source Sans 3, números tabulares em tabelas."
+    ],
+    "rules": [
+      { "name": "The Red-Amber Reserve Rule", "body": "Vermelho e âmbar só existem para risco, atenção e erro. A marca nunca usa essas famílias, e nada decorativo as usa.", "section": "colors" },
+      { "name": "The Brand-on-Action Rule", "body": "O verde-azulado marca o que se pode fazer (ação, foco, mensagem própria). Não pinta fundos de seção nem decoração.", "section": "colors" },
+      { "name": "The Never-Color-Alone Rule", "body": "Todo status carrega ícone, rótulo e cor; sem a cor, ainda deve dar para distinguir.", "section": "colors" },
+      { "name": "The Tabular Numbers Rule", "body": "Tabelas e horários usam algarismos tabulares para alinhar colunas.", "section": "typography" },
+      { "name": "The Sentence-Case Rule", "body": "Rótulos e botões em caixa de frase, sem caixa alta nem espaçamento de letras.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Nenhuma superfície projeta sombra, em repouso ou em hover. Foco usa anel e contorno, não brilho.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar o verde-azulado só em ação, foco e mensagem do próprio paciente.",
+      "Do mostrar status sempre com ícone lucide, rótulo e cor.",
+      "Do separar superfícies por borda de 1px e tom, sem sombra.",
+      "Do manter alvos de toque de 44px em botões e campos.",
+      "Do escrever erros que dizem como corrigir e estados vazios que dizem o que fazer.",
+      "Do destacar a linha de risco com status-risco-linha, nome em semibold e selo.",
+      "Do usar números tabulares em tabelas e horários."
+    ],
+    "donts": [
+      "Don't usar vermelho ou âmbar fora de risco, atenção e erro.",
+      "Don't comunicar status só por cor.",
+      "Don't usar sombras, desfoque de fundo ou brilho.",
+      "Don't introduzir um terceiro raio além de 8px e 12px.",
+      "Don't colocar mais de uma ação principal por tela.",
+      "Don't usar emoji ou glifos como ícones; só lucide via ng-icon."
+    ]
+  }
+}

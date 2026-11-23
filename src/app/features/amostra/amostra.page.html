@@ -1,0 +1,376 @@
+<header
+  class="bg-background/95 sticky top-0 z-10 border-b backdrop-blur-none"
+  style="padding-top: env(safe-area-inset-top, 0px)"
+>
+  <div class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-8 gap-y-3 px-4 py-3 md:px-8">
+    <p class="font-display text-lg font-semibold">PsiApoio · amostra do design</p>
+  </div>
+</header>
+
+<main class="mx-auto max-w-5xl px-4 pb-24 md:px-8">
+  <section class="py-12">
+    <h1 class="max-w-2xl text-4xl font-semibold md:text-5xl">
+      Um painel para o psicólogo, uma conversa tranquila para o paciente
+    </h1>
+    <p class="text-muted-foreground mt-5 max-w-prose text-lg">
+      Amostra do sistema visual aprovado. Todos os nomes, mensagens e pacientes desta página são
+      fictícios.
+    </p>
+  </section>
+
+  <!-- Cores -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Cores</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        A marca só aparece em ação e foco. Vermelho e âmbar são de risco e atenção.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4">
+      @for (c of [
+        { n: 'Marca', v: 'var(--primary)', t: 'var(--primary-foreground)' },
+        { n: 'Marca suave', v: 'var(--secondary)', t: 'var(--secondary-foreground)' },
+        { n: 'Fundo', v: 'var(--background)', t: 'var(--foreground)' },
+        { n: 'Superfície', v: 'var(--card)', t: 'var(--foreground)' },
+        { n: 'Texto', v: 'var(--foreground)', t: 'var(--background)' },
+        { n: 'Texto de apoio', v: 'var(--muted-foreground)', t: 'var(--background)' },
+        { n: 'Atenção', v: 'var(--status-atencao-bg)', t: 'var(--status-atencao-fg)' },
+        { n: 'Risco', v: 'var(--status-risco-bg)', t: 'var(--status-risco-fg)' }
+      ]; track c.n) {
+        <div>
+          <div
+            class="flex h-20 items-end rounded-md border p-2 text-sm font-semibold"
+            [style.background]="c.v"
+            [style.color]="c.t"
+          >
+            Aa
+          </div>
+          <p class="mt-1.5 text-sm">{{ c.n }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Tipografia -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Tipografia</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Corpo de 16 px com entrelinha de 1,6, pensado para ler transcrições longas.
+      </p>
+    </div>
+    <div class="max-w-prose space-y-5">
+      <p class="font-display text-4xl font-semibold">Acompanhamento entre as sessões</p>
+      <p class="font-display text-2xl font-semibold">Resumo diário de Camila Duarte</p>
+      <p class="font-display text-xl font-semibold">Tarefas combinadas na última sessão</p>
+      <p>
+        Camila disse que dormiu melhor depois de fazer o exercício de respiração à noite. Ela
+        ainda sente tensão antes das reuniões de segunda-feira e pediu para voltar a esse assunto
+        na sessão.
+      </p>
+      <p class="text-muted-foreground text-[0.9375rem]">
+        Gerado hoje às 08:00 a partir de 14 mensagens. Não é uma conclusão clínica.
+      </p>
+      <p class="tabular-nums">0123456789 · 09:12 · 28/10/2026</p>
+    </div>
+  </section>
+
+  <!-- Espaço e forma -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Espaçamento e forma</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Escala de 4 px. Dois raios: 8 px nos controles e 12 px nas superfícies. Sem sombras.
+      </p>
+    </div>
+    <div class="space-y-6">
+      <div class="space-y-2">
+        @for (e of escalaEspaco; track e) {
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-muted-foreground w-10 tabular-nums">{{ e * 4 }} px</span>
+            <span class="bg-primary/70 block h-3 rounded-sm" [style.width.px]="e * 4"></span>
+          </div>
+        }
+      </div>
+      <div class="flex flex-wrap gap-6">
+        <div class="bg-muted flex h-16 w-28 items-center justify-center rounded-md text-sm">
+          Controle · 8 px
+        </div>
+        <div class="bg-muted flex h-16 w-28 items-center justify-center text-sm" style="border-radius: var(--radius-surface)">
+          Superfície · 12 px
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botões -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Botões</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Uma ação principal por tela. Alvo de toque de 44 px.
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <button hlmBtn>
+        <ng-icon name="lucideSend" aria-hidden="true" />
+        Enviar convite
+      </button>
+      <button hlmBtn variant="secondary">Salvar rascunho</button>
+      <button hlmBtn variant="outline">Cancelar</button>
+      <button hlmBtn variant="ghost">Ver transcrição</button>
+      <button hlmBtn variant="destructive">Encerrar acompanhamento</button>
+      <button hlmBtn disabled>Indisponível</button>
+      <button hlmBtn (click)="alternarEnvio()" [attr.aria-busy]="enviando()">
+        @if (enviando()) {
+          <ng-icon name="lucideLoaderCircle" class="animate-spin" aria-hidden="true" />
+          Enviando convite…
+        } @else {
+          Simular envio
+        }
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Formulário</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Rótulo sempre visível, ajuda abaixo do campo e erro que diz como corrigir.
+      </p>
+    </div>
+    <form class="max-w-md space-y-6" (submit)="$event.preventDefault()">
+      <div class="space-y-2">
+        <label hlmLabel for="nome">Nome do paciente</label>
+        <input hlmInput id="nome" type="text" autocomplete="off" value="Beatriz Lemos" />
+      </div>
+      <div class="space-y-2">
+        <label hlmLabel for="email">E-mail para o convite</label>
+        <input
+          hlmInput
+          id="email"
+          type="email"
+          autocomplete="off"
+          value="beatriz.lemos@"
+          [forceInvalid]="true"
+          aria-describedby="email-ajuda email-erro"
+        />
+        <p id="email-ajuda" class="text-muted-foreground text-sm">
+          O convite chega por aqui. Não enviamos conteúdo da conversa.
+        </p>
+        <p id="email-erro" class="text-destructive flex items-center gap-1.5 text-sm font-medium">
+          <ng-icon name="lucideOctagonAlert" aria-hidden="true" />
+          Falta o domínio no e-mail. Exemplo: nome&#64;exemplo.com
+        </p>
+      </div>
+      <div class="space-y-2">
+        <label hlmLabel for="abordagem">Abordagem</label>
+        <input hlmInput id="abordagem" type="text" placeholder="Ex.: terapia cognitivo-comportamental" />
+      </div>
+      <button hlmBtn type="submit">Enviar convite</button>
+    </form>
+  </section>
+
+  <!-- Status -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Status</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Cada nível tem ícone, rótulo e cor. Tirando a cor, ainda dá para distinguir.
+      </p>
+    </div>
+    <div class="space-y-6">
+      <div class="flex flex-wrap items-center gap-3">
+        <span hlmBadge variant="nenhum">
+          <ng-icon name="lucideCircleCheck" aria-hidden="true" />
+          Sem alerta
+        </span>
+        <span hlmBadge variant="atencao">
+          <ng-icon name="lucideTriangleAlert" aria-hidden="true" />
+          Atenção
+        </span>
+        <span hlmBadge variant="risco">
+          <ng-icon name="lucideOctagonAlert" aria-hidden="true" />
+          Risco
+        </span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <span hlmBadge variant="pendente">
+          <ng-icon name="lucideClock" aria-hidden="true" />
+          Perfil pendente
+        </span>
+        <span hlmBadge variant="aprovado">
+          <ng-icon name="lucideBadgeCheck" aria-hidden="true" />
+          Perfil aprovado
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Painel do psicólogo -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Painel do psicólogo</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Lista ordenada por alerta. Risco ganha fundo próprio e peso na fonte, além do rótulo.
+      </p>
+    </div>
+    <div hlmTableContainer>
+      <table hlmTable>
+        <caption hlmCaption>
+          Pacientes de hoje, do maior alerta para o menor (dados fictícios).
+        </caption>
+        <thead hlmTHead>
+          <tr hlmTr>
+            <th hlmTh scope="col">Paciente</th>
+            <th hlmTh scope="col">Alerta</th>
+            <th hlmTh scope="col">Última mensagem</th>
+            <th hlmTh scope="col">Humor</th>
+            <th hlmTh scope="col">Perfil do agente</th>
+            <th hlmTh scope="col"><span class="sr-only">Ação</span></th>
+          </tr>
+        </thead>
+        <tbody hlmTBody>
+          @for (p of pacientes; track p.nome) {
+            <tr hlmTr [class.bg-status-risco-linha]="p.nivel === 'risco'">
+              <th scope="row" hlmTd [class.font-semibold]="p.nivel === 'risco'" class="text-start font-medium">
+                {{ p.nome }}
+              </th>
+              <td hlmTd>
+                @switch (p.nivel) {
+                  @case ('risco') {
+                    <span hlmBadge variant="risco">
+                      <ng-icon name="lucideOctagonAlert" aria-hidden="true" />
+                      Risco
+                    </span>
+                  }
+                  @case ('atencao') {
+                    <span hlmBadge variant="atencao">
+                      <ng-icon name="lucideTriangleAlert" aria-hidden="true" />
+                      Atenção
+                    </span>
+                  }
+                  @default {
+                    <span hlmBadge variant="nenhum">
+                      <ng-icon name="lucideCircleCheck" aria-hidden="true" />
+                      Sem alerta
+                    </span>
+                  }
+                }
+              </td>
+              <td hlmTd class="tabular-nums">{{ p.ultima }}</td>
+              <td hlmTd>{{ p.humor }}</td>
+              <td hlmTd>
+                @if (p.perfilAprovado) {
+                  <span hlmBadge variant="aprovado">
+                    <ng-icon name="lucideBadgeCheck" aria-hidden="true" />
+                    Aprovado
+                  </span>
+                } @else {
+                  <span hlmBadge variant="pendente">
+                    <ng-icon name="lucideClock" aria-hidden="true" />
+                    Pendente
+                  </span>
+                }
+              </td>
+              <td hlmTd class="text-end">
+                <button hlmBtn size="sm" [variant]="p.nivel === 'risco' ? 'default' : 'outline'">
+                  Abrir<span class="sr-only"> acompanhamento de {{ p.nome }}</span>
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Conversa do paciente -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Conversa do paciente</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Mais espaço, frases curtas e nenhuma pressa. O paciente sabe que o psicólogo lê.
+      </p>
+    </div>
+    <div class="max-w-md space-y-6">
+      <p class="text-muted-foreground text-sm">
+        Sua conversa é lida pela Dra. Ana Ribeiro, que acompanha você.
+      </p>
+
+      <div class="space-y-4" role="log" aria-label="Conversa de exemplo">
+        <div class="max-w-[85%]">
+          <p class="bg-muted rounded-xl rounded-bl-sm px-4 py-3">
+            Bom dia, Camila. Como foi o exercício de respiração ontem à noite?
+          </p>
+        </div>
+        <div class="ms-auto max-w-[85%]">
+          <p class="bg-primary text-primary-foreground rounded-xl rounded-br-sm px-4 py-3">
+            Fiz por cinco minutos. Consegui dormir mais cedo.
+          </p>
+        </div>
+        <div class="max-w-[85%]">
+          <p class="bg-muted rounded-xl rounded-bl-sm px-4 py-3">
+            Que bom ouvir isso. Quer registrar como você está se sentindo agora?
+          </p>
+        </div>
+        <div class="max-w-[85%]">
+          <p class="bg-muted rounded-xl rounded-bl-sm px-4 py-3">
+            Recebi sua mensagem. Já avisei a Dra. Ana e ela vai ver isso com cuidado. Você não
+            está sozinho agora.
+          </p>
+          <p class="text-muted-foreground mt-1.5 text-sm">Resposta fixa para mensagens de risco</p>
+        </div>
+      </div>
+
+      <form class="flex items-end gap-2" (submit)="$event.preventDefault()">
+        <div class="grid flex-1 gap-2">
+          <label hlmLabel for="msg">Sua mensagem</label>
+          <input hlmInput id="msg" type="text" autocomplete="off" />
+        </div>
+        <button hlmBtn type="submit">
+          <ng-icon name="lucideSend" aria-hidden="true" />
+          Enviar
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Estados -->
+  <section class="grid gap-x-10 gap-y-6 border-t py-12 lg:grid-cols-[14rem_1fr]">
+    <div>
+      <h2 class="text-2xl font-semibold">Estados</h2>
+      <p class="text-muted-foreground mt-2 text-[0.9375rem]">
+        Vazio, erro e carregando dizem o que aconteceu e o que fazer.
+      </p>
+    </div>
+    <div class="max-w-xl space-y-10">
+      <div>
+        <h3 class="text-lg font-semibold">Vazio</h3>
+        <p class="text-muted-foreground mt-1">
+          Nenhum alerta por enquanto. Quando uma mensagem pedir sua atenção, ela aparece aqui.
+        </p>
+        <button hlmBtn variant="outline" class="mt-4">Cadastrar paciente</button>
+      </div>
+
+      <div hlmAlert variant="destructive">
+        <ng-icon name="lucideOctagonAlert" aria-hidden="true" />
+        <p hlmAlertTitle>Não foi possível carregar o Resumo diário</p>
+        <p hlmAlertDescription>
+          Sua conexão pode ter caído. Tente de novo; se continuar, avise o suporte.
+        </p>
+        <button hlmBtn size="sm" variant="outline" class="col-start-2 mt-3 justify-self-start">
+          <ng-icon name="lucideRefreshCw" aria-hidden="true" />
+          Tentar de novo
+        </button>
+      </div>
+
+      <div role="status" aria-label="Carregando lista de pacientes" class="space-y-3">
+        <div hlmSkeleton class="h-10 w-full"></div>
+        <div hlmSkeleton class="h-10 w-full"></div>
+        <div hlmSkeleton class="h-10 w-2/3"></div>
+      </div>
+    </div>
+  </section>
+</main>
